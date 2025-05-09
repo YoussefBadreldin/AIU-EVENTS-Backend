@@ -12,17 +12,6 @@ const app = express();
 
 // Import routes
 const StudentsRoutes = require('../router/StudentsRouter');
-const MembersRouter = require('../router/MembersRouter');
-const ClubsRouter = require('../router/ClubsRouter');
-const SportsRouter = require('../router/SportsRouter');
-const CulturalRouter = require('../router/CulturalRouter');
-const SocialRouter = require('../router/SocialRouter');
-const ScoutRouter = require('../router/ScoutRouter');
-const ScientificRouter = require('../router/ScientificRouter');
-const ArtsRouter = require('../router/ArtsRouter');
-const ActivitiesRouter = require('../router/ActivitiesRouter');
-const PlaceRouter = require('../router/PlaceRouter');
-const ComplaintsSuggestionsRouter = require('../router/ComplaintsSuggestionsRouter');
 const EventsRouter = require('../router/eventsRouter'); // Import Events Router
 
 // Middleware
@@ -43,17 +32,6 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/eventsDB'
 
 // Routes
 app.use('/sdata', StudentsRoutes);
-app.use('/members', MembersRouter);
-app.use('/clubs', ClubsRouter);
-app.use('/sports', SportsRouter);
-app.use('/cultural', CulturalRouter);
-app.use('/social', SocialRouter);
-app.use('/scout', ScoutRouter);
-app.use('/scientific', ScientificRouter);
-app.use('/arts', ArtsRouter);
-app.use('/activities', ActivitiesRouter);
-app.use('/places', PlaceRouter);
-app.use('/complaints-suggestions', ComplaintsSuggestionsRouter);
 app.use('/events', EventsRouter); // Add Events Router
 
 // Default route for health check
